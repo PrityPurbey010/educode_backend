@@ -20,6 +20,10 @@ const connectDb = require("./utils/db");
   app.use(cors(corsOption))
   app.use(express.json());
   
+  app.get("/", (req, res) => {
+    res.send("Welcome to EduCode. Backend. Server is running...");
+  });
+  
   app.use("/api/auth", authRoute);
   app.use("/api/form", contactRoute);
   app.use("/api/data", serviceRouter);
